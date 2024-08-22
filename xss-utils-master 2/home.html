@@ -1,0 +1,19 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS Example</title>
+</head>
+<body>
+    <h1>XSS Example</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="user_input">User input:</label><br>
+        <textarea id="user_input" name="user_input" rows="4" cols="50">{{ user_input }}</textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>Rendered user input:</p>
+    <div>{{ user_input }}</div>
+</body>
+</html>
